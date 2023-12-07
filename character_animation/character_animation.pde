@@ -3,8 +3,15 @@
 //background art from https://www.kenney.nl/assets/roguelike-rpg-pack
 //footstep audio from https://www.kenney.nl/assets/rpg-audio
 //coin audio from https://pixabay.com/sound-effects/coin-c-02-102844/
+import processing.sound.*;
+
 
 PImage map;
+PImage[] coinAnim = new PImage[6];
+int framerate;
+
+SoundFile pickup;
+
 
 
 
@@ -14,6 +21,12 @@ Hero character;
 void setup(){
   size(400, 400);
   map = loadImage("sample_map.png");
+  //coin_c_02-102844
+  pickup = new SoundFile(this, "coin_c_02-102844.wav");
+  
+  for (int i = 0; i < coinAnim.length;i++){
+   coinAnim[i] = loadImage("star coin rotate "+(i+1) + ".png");
+  }
   
   coin = new Coin();
   
@@ -26,6 +39,7 @@ void draw(){
   coin.display();
   if(coin.collision(character.position.x, character.position.y, character.xWidth, character.yHeight)){
     coin = new Coin();
+
   }
   
   character.move();
