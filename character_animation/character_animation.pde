@@ -5,6 +5,7 @@
 //coin audio from https://pixabay.com/sound-effects/coin-c-02-102844/
 
 PImage map;
+PImage[] coinAnim = new PImage[6];
 
 Coin coin;
 Hero character;
@@ -12,6 +13,10 @@ Hero character;
 void setup(){
   size(400, 400);
   map = loadImage("sample_map.png");
+  
+  for (int i = 0; i < coinAnim.length;i++){
+   coinAnim[i] = loadImage("star coin rotate "+(i+1) + ".png");
+  }
   
   coin = new Coin();
   
