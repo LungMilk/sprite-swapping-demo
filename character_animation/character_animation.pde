@@ -6,6 +6,7 @@
 
 PImage map;
 PImage[] coinAnim = new PImage[6];
+int framerate;
 
 Coin coin;
 Hero character;
@@ -33,6 +34,7 @@ void draw(){
   
   character.move();
   character.display();
+  framerate++;
 }
 
 void keyPressed(){

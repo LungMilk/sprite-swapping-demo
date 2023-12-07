@@ -11,12 +11,15 @@ class Coin {
   
   void display(){
 
-    if (frameRate % 10 ==0){
+    if (framerate % 10 ==0){
      frameNum = (frameNum+1) % coinAnim.length; 
     }
     if (frameNum ==coinAnim.length){frameNum =0;}
+    
+    
     imageMode(CENTER);
     image(coinAnim[frameNum],position.x,position.y);
+    println(frameNum);
   }
   
   boolean collision(float x, float y, float w, float h){
