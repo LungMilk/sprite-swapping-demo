@@ -6,6 +6,8 @@
 
 PImage map;
 
+
+
 Coin coin;
 Hero character;
 
